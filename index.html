@@ -12,15 +12,26 @@
     <body>
         <header class="nav">
             <h2 style="font-weight: bold;"><a href="index.html">Where in the World?</a> </a></h2>
-            <span>
+            <span id="dark">
                 <i class="far fa-moon"></i> Dark Mode
             </span>
         </header>
 
-        <main id="main">
+        <main id="main" class="main">
+    
             <form id="form" class="form">
                 <input type="text" class="search" id="search" placeholder="Search for a country...">
+                <select name="region" id="region" class='region' form="form">
+                    <option value="" selected hidden>Filter by a region: </option>
+                    <option value="all">All</option>
+                    <option value="africa">Africa</option>
+                    <option value="americas">Americas</option>
+                    <option value="asia">Asia</option>
+                    <option value="europe">Europe</option>
+                    <option value="oceania">Oceania</option>
+                </select>
             </form>
+            
             <div class="country-container" id="country-container">
                 
             </div>

@@ -2,6 +2,13 @@
     box-sizing: border-box;
 }
 
+:root {
+    --light-first-color: #fff;
+    --light-second-color: rgb(247, 241, 241);
+    --dark-first-color: rgb(49, 49, 49);
+    --dark-second-color: rgb(22, 22, 22);
+}
+
 body {
     margin: 0;
 }
@@ -14,10 +21,15 @@ h3, p {
     padding: 1rem 1.5rem;
     display: flex;
     justify-content: space-between;
-    background-color: #fff;
+    background-color: var(--light-firs-color);
     color: #000;
     align-items: center;
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav.dark {
+    background-color: var(--dark-first-color);
+    color: #fff;
 }
 
 .nav a {
@@ -25,26 +37,57 @@ h3, p {
     color: #000;
 }
 
-#main {
-    padding: 1.5rem;
-    background-color: rgb(247, 241, 241);
+.nav.dark a {
+    color:#fff;
 }
 
-.search {
-    border: none;
+.main {
     padding: 1.5rem;
+    background-color: var(--light-second-color);
+    position: relative;
+}
+
+.main.dark {
+    background-color: var(--dark-second-color);
+    color: #fff;
+}
+
+#form {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.search, .region {
+    background-color: var(--light-first-color);
+    color: #000;
+    border: none;
+    padding: 1rem;
     border-radius: 50px;
-    width: 300px;
-    margin-bottom: 20px;
+    width: 250px;
+    margin: 20px;
+}
+
+.search.dark, .region.dark {
+    background-color: var(--dark-first-color);
+    color:#fff;
+}
+
+.search.dark:focus, .region.dark:focus {
+    background-color: var(--dark-second-color);
 }
 
 .search::placeholder {
-    color: #7378c5;
+    color: #dee0f3;
   }
   
-.search:focus {
+.search:focus, .region:focus {
     outline: none;
-    background-color:rgb(247, 241, 241);
+    background-color: var(--light-second-color);
+}
+
+#dark {
+    cursor: pointer;
 }
 
 .country-container {
@@ -56,7 +99,7 @@ h3, p {
 .country {
     width: 270px;
     margin: 1rem;
-    background-color: #fff;
+    
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     transition: transform 0.5s ease-in-out;
@@ -94,9 +137,16 @@ h3, p {
     margin-bottom: 2.5rem;
     border: none;
     text-decoration: none;
-    background-color: #fff;
+    background-color: var(--light-first-color);
     padding: 1rem;
     border-radius: 15px;
+}
+
+.btn.dark {
+    background-color: var(--dark-first-color);
+}
+.btn.dark a {
+    color:#fff
 }
 
 .btn a {
@@ -137,7 +187,7 @@ h3, p {
 }
 
 .info ul a {
-    background-color: #fff;
+    background-color: var(--light-firs-color);
     padding: 0.5rem;
     border-radius: 3px;
 }
